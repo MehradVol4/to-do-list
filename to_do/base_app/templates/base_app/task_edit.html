@@ -1,0 +1,15 @@
+{% extends 'base_app/main.html' %}
+{% block content %}
+
+<div class="container">
+    <h3 class="mb-3">{{ form.instance.id|yesno:"Edit Task,Create New Task" }}</h3>
+    <a href="{% url 'tasks' %}" class="btn btn-secondary mb-3">Go Back</a>
+    <form method="POST" action=''>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">{{ form.instance.id|yesno:"Update,Add" }}</button>
+    </form>
+</div>
+
+
+{% endblock content %}

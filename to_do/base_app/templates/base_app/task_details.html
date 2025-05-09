@@ -1,0 +1,13 @@
+{% extends 'base_app/main.html' %}
+{% block content %}
+
+
+<div class="container">
+    <h1 class="mb-4">Task Details</h1>
+    <h3>{{ task }}</h3>
+    <p>{{ task.description }}</p>
+    <a href="{% url 'tasks' %}" class="btn btn-secondary mt-3">Back to List</a>
+</div>
+
+
+{% endblock content %}

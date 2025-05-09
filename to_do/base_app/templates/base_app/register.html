@@ -1,0 +1,15 @@
+{% extends 'base_app/main.html' %}
+{% block content %}
+
+
+<div class="container">
+    <h1 class="mb-4">Register</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+    <p class="mt-3">Already have an account? <a href="{% url 'log-in' %}">Log in</a></p>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends 'base_app/main.html' %}
+{% block content %}
+
+<div class="container">
+    <h1 class="mb-4">Confirm Deletion</h1>
+    <a href="{% url 'tasks' %}" class="btn btn-secondary mb-3">Go Back</a>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete: <strong>"{{ tasks }}"</strong>?</p>
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>
+
+{% endblock content %}
